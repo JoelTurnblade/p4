@@ -8,10 +8,7 @@
 <body>
 <a class='title-link' href='/'>Dungeons <br> & Dragons</a>
 @yield('login-panel')
-@yield('content')
+@yield('register')
 @yield('404')
-
-
-
 </body>
 </html>

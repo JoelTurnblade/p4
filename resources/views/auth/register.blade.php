@@ -1,6 +1,5 @@
 @extends('layouts.master')
-
-@section('content')
+@section('register')
 <div class='heading'></div>
 <div class='register'>
     <form method='POST' action='/register'>

@@ -27,6 +27,32 @@ body {
     float: right;
 }
 
+.navigation-bar {
+    position: absolute;
+    left: 20%;
+    top: 0;
+    height: 60px;
+    width: 60%;
+}
+
+.navigation {
+    background-color: dodgerblue;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 10px;
+    border-color: darkblue;
+}
+
+.navigation-container {
+    display: inline-block;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+}
+
 .login-fail {
     color: white;
     font-size: 14px;

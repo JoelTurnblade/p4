@@ -27,12 +27,10 @@
                     @if(!empty(old('email'))) <div class='login-fail'>Login Failed</div> @endif
                 </div>
             </form>
-            @if(!empty(old('email')))
-                <a class='recover-password' href='/password/reset'>
-                    Recover Password?
-                </a>
-            @endif
         @endif
     </div>
+    @if(isset($user))
+        @yield('navigation')
+    @endif
 @endsection
 

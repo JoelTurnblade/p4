@@ -1,0 +1,245 @@
+<?php
+
+use Illuminate\Database\Seeder;
+use App\Character;
+
+class CharactersTableSeeder extends Seeder
+{
+    // http://dnd3rd.sourceforge.net/ for random characters
+    // @fixme include the random characters website in the readme
+
+    public function run()
+    {
+        $wizard = new Character;
+        $wizard->name = 'Ged';
+        $wizard->race = 'Human';
+        $wizard->class = 'Wizard';
+        $wizard->level = 1;
+        $wizard->str = 14;
+        $wizard->dex = 16;
+        $wizard->con = 10;
+        $wizard->int = 16;
+        $wizard->wis = 12;
+        $wizard->cha = 11;
+        $wizard->max_hp = 4 + 0;
+        $wizard->current_hp = $wizard->max_hp;
+        $wizard->gold = 160;
+        $wizard->armor_name = 'None';
+        $wizard->armor_ac_bonus = 0;
+        $wizard->weapon_name = 'None';
+        $wizard->weapon_max_dmg = 0;
+        $wizard->ranged_weapon = false;
+        $wizard->save();
+
+        $sorcerer = new Character;
+        $sorcerer->name = 'Isc Boce';
+        $sorcerer->race = 'Halfing';
+        $sorcerer->class = 'Sorcerer';
+        $sorcerer->level = 1;
+        $sorcerer->str = 9;
+        $sorcerer->dex = 12;
+        $sorcerer->con = 9;
+        $sorcerer->int = 17;
+        $sorcerer->wis = 13;
+        $sorcerer->cha = 13;
+        $sorcerer->max_hp = 4 - 1;
+        $sorcerer->current_hp = $sorcerer->max_hp;
+        $sorcerer->gold = 160;
+        $sorcerer->armor_name = 'None';
+        $sorcerer->armor_ac_bonus = 0;
+        $sorcerer->weapon_name = 'None';
+        $sorcerer->weapon_max_dmg = 0;
+        $sorcerer->ranged_weapon = false;
+        $sorcerer->save();
+
+        $rogue = new Character;
+        $rogue->name = 'Shii Geau';
+        $rogue->race = 'Halfing';
+        $rogue->class = 'Rogue';
+        $rogue->level = 1;
+        $rogue->str = 15;
+        $rogue->dex = 17;
+        $rogue->con = 12;
+        $rogue->int = 9;
+        $rogue->wis = 12;
+        $rogue->cha = 17;
+        $rogue->max_hp = 6 + 1;
+        $rogue->current_hp = $rogue->max_hp;
+        $rogue->gold = 160;
+        $rogue->armor_name = 'None';
+        $rogue->armor_ac_bonus = 0;
+        $rogue->weapon_name = 'None';
+        $rogue->weapon_max_dmg = 0;
+        $rogue->ranged_weapon = false;
+        $rogue->save();
+
+        $bard = new Character;
+        $bard->name = 'Zius Ate';
+        $bard->race = 'Gnome';
+        $bard->class = 'Bard';
+        $bard->level = 1;
+        $bard->str = 14;
+        $bard->dex = 12;
+        $bard->con = 12;
+        $bard->int = 15;
+        $bard->wis = 15;
+        $bard->cha = 13;
+        $bard->max_hp = 6 + 1;
+        $bard->current_hp = $bard->max_hp;
+        $bard->gold = 160;
+        $bard->armor_name = 'None';
+        $bard->armor_ac_bonus = 0;
+        $bard->weapon_name = 'None';
+        $bard->weapon_max_dmg = 0;
+        $bard->ranged_weapon = false;
+        $bard->save();
+
+        $cleric = new Character;
+        $cleric->name = 'Aveth';
+        $cleric->race = 'Half Elf';
+        $cleric->class = 'Cleric';
+        $cleric->level = 1;
+        $cleric->str = 15;
+        $cleric->dex = 17;
+        $cleric->con = 18;
+        $cleric->int = 18;
+        $cleric->wis = 14;
+        $cleric->cha = 14;
+        $cleric->max_hp = 8 + 4;
+        $cleric->current_hp = $cleric->max_hp;
+        $cleric->gold = 160;
+        $cleric->armor_name = 'None';
+        $cleric->armor_ac_bonus = 0;
+        $cleric->weapon_name = 'None';
+        $cleric->weapon_max_dmg = 0;
+        $cleric->ranged_weapon = false;
+        $cleric->save();
+
+        $druid = new Character;
+        $druid->name = 'Gandalf';
+        $druid->race = 'Elf';
+        $druid->class = 'Druid';
+        $druid->level = 1;
+        $druid->str = 11;
+        $druid->dex = 15;
+        $druid->con = 14;
+        $druid->int = 16;
+        $druid->wis = 12;
+        $druid->cha = 8;
+        $druid->max_hp = 8 + 2;
+        $druid->current_hp = $druid->max_hp;
+        $druid->gold = 160;
+        $druid->armor_name = 'None';
+        $druid->armor_ac_bonus = 0;
+        $druid->weapon_name = 'None';
+        $druid->weapon_max_dmg = 0;
+        $druid->ranged_weapon = false;
+        $druid->save();
+
+        $monk = new Character;
+        $monk->name = 'Ken Uf';
+        $monk->race = 'Half Orc';
+        $monk->class = 'Monk';
+        $monk->level = 1;
+        $monk->str = 17;
+        $monk->dex = 15;
+        $monk->con = 10;
+        $monk->int = 8;
+        $monk->wis = 16;
+        $monk->cha = 12;
+        $monk->max_hp = 8 + 0;
+        $monk->current_hp = $monk->max_hp;
+        $monk->gold = 160;
+        $monk->armor_name = 'None';
+        $monk->armor_ac_bonus = 0;
+        $monk->weapon_name = 'None';
+        $monk->weapon_max_dmg = 0;
+        $monk->ranged_weapon = false;
+        $monk->save();
+
+        $ranger = new Character;
+        $ranger->name = 'Fre Sree';
+        $ranger->race = 'Elf';
+        $ranger->class = 'Ranger';
+        $ranger->level = 1;
+        $ranger->str = 16;
+        $ranger->dex = 16;
+        $ranger->con = 13;
+        $ranger->int = 11;
+        $ranger->wis = 14;
+        $ranger->cha = 10;
+        $ranger->max_hp = 8 + 1;
+        $ranger->current_hp = $ranger->max_hp;
+        $ranger->gold = 160;
+        $ranger->armor_name = 'None';
+        $ranger->armor_ac_bonus = 0;
+        $ranger->weapon_name = 'None';
+        $ranger->weapon_max_dmg = 0;
+        $ranger->ranged_weapon = false;
+        $ranger->save();
+
+        $fighter = new Character;
+        $fighter->name = 'Ori';
+        $fighter->race = 'Dwarf';
+        $fighter->class = 'Fighter';
+        $fighter->level = 1;
+        $fighter->str = 17;
+        $fighter->dex = 14;
+        $fighter->con = 15;
+        $fighter->int = 13;
+        $fighter->wis = 13;
+        $fighter->cha = 13;
+        $fighter->max_hp = 10 + 2;
+        $fighter->current_hp = $fighter->max_hp;
+        $fighter->gold = 160;
+        $fighter->armor_name = 'None';
+        $fighter->armor_ac_bonus = 0;
+        $fighter->weapon_name = 'None';
+        $fighter->weapon_max_dmg = 0;
+        $fighter->ranged_weapon = false;
+        $fighter->save();
+
+        $paladin = new Character;
+        $paladin->name = 'Moasc Tab';
+        $paladin->race = 'Human';
+        $paladin->class = 'Paladin';
+        $paladin->level = 1;
+        $paladin->str = 15;
+        $paladin->dex = 10;
+        $paladin->con = 14;
+        $paladin->int = 10;
+        $paladin->wis = 13;
+        $paladin->cha = 9;
+        $paladin->max_hp = 10 + 2;
+        $paladin->current_hp = $paladin->max_hp;
+        $paladin->gold = 160;
+        $paladin->armor_name = 'None';
+        $paladin->armor_ac_bonus = 0;
+        $paladin->weapon_name = 'None';
+        $paladin->weapon_max_dmg = 0;
+        $paladin->ranged_weapon = false;
+        $paladin->save();
+
+        $barbarian = new Character;
+        $barbarian->name = 'Trouf Ruckoi';
+        $barbarian->race = 'Half Orc';
+        $barbarian->class = 'Barbarian';
+        $barbarian->level = 1;
+        $barbarian->str = 12;
+        $barbarian->dex = 15;
+        $barbarian->con = 17;
+        $barbarian->int = 13;
+        $barbarian->wis = 12;
+        $barbarian->cha = 9;
+        $barbarian->max_hp = 12 + 3;
+        $barbarian->current_hp = $barbarian->max_hp;
+        $barbarian->gold = 160;
+        $barbarian->armor_name = 'None';
+        $barbarian->armor_ac_bonus = 0;
+        $barbarian->weapon_name = 'None';
+        $barbarian->weapon_max_dmg = 0;
+        $barbarian->ranged_weapon = false;
+        $barbarian->save();
+
+    }
+}
