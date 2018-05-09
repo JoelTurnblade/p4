@@ -35,7 +35,7 @@ body {
     top: 0;
     height: 60px;
     width: 40%;
-    min-width: 300px;
+    min-width: 400px;
 }
 
 .navigation {
@@ -73,7 +73,7 @@ body {
     text-decoration: none;
 }
 
-.error {
+.error-message {
     text-align: center;
     padding: 50px;
 }
@@ -227,9 +227,18 @@ select option:checked {
     min-height: 200px;
 }
 
-.test {
-    text-align: center;
-    width: 20%;
+.sharing-table {
+    display: inline-block;
+    width: auto;
+    border: none;
+}
+
+.sharing-input {
+    width: 300px;
+}
+
+.sharing-padding {
+    padding-top: 5px;
 }
 
 

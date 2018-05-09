@@ -37,6 +37,7 @@ class CreateCharactersTable extends Migration
 
             $table->boolean('friendly');
 
+            $table->string('sharing');
         });
     }
 

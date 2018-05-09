@@ -109,9 +109,35 @@ Route::get('/combat', function() {
 Route::post('/combat', 'CombatController@attack');
 
 
+Route::get('/sharing', function () {
+
+    $user = Auth::user();
+    if($user) {
+
+        $characters = Character::whereHas('users', function($query) {
+            $query->where('name', '=', Auth::user()->name);
+        })->get();
+
+        return view('pages.sharing')->with([
+            'user' => $user,
+            'userName' => $user->name,
+            'characters' => $characters,
+            'message' => '',
+        ]);
+
+    } else {
+        return view('errors.404');
+    }
+
+});
+
+
+Route::post('/sharing', 'SharingController@link');
+
+
 Route::match('get', 'login', function(){
     return view('errors.404');
-})->middleware('auth');
+});
 
 
 Route::match('get', 'password/reset', function(){

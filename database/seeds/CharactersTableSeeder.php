@@ -19,16 +19,17 @@ class CharactersTableSeeder extends Seeder
         $wizard->int = 16;
         $wizard->wis = 12;
         $wizard->cha = 11;
-        $wizard->status = 'Inactive';
+        $wizard->status = 'Active';
         $wizard->max_hp = 4 + 0;
         $wizard->current_hp = $wizard->max_hp;
         $wizard->gold = 160;
         $wizard->armor_name = 'None';
         $wizard->armor_ac_bonus = 0;
         $wizard->weapon_name = 'None';
-        $wizard->weapon_max_dmg = 0;
+        $wizard->weapon_max_dmg = 2;
         $wizard->ranged_weapon = false;
         $wizard->friendly = true;
+        $wizard->sharing = hash('sha256', $wizard->id . $wizard->name);
         $wizard->save();
 
         $sorcerer = new Character;
@@ -49,9 +50,10 @@ class CharactersTableSeeder extends Seeder
         $sorcerer->armor_name = 'None';
         $sorcerer->armor_ac_bonus = 0;
         $sorcerer->weapon_name = 'None';
-        $sorcerer->weapon_max_dmg = 0;
+        $sorcerer->weapon_max_dmg = 1;
         $sorcerer->ranged_weapon = false;
         $sorcerer->friendly = false;
+        $sorcerer->sharing = hash('sha256', $sorcerer->id . $sorcerer->name);
         $sorcerer->save();
 
         $rogue = new Character;
@@ -72,9 +74,10 @@ class CharactersTableSeeder extends Seeder
         $rogue->armor_name = 'None';
         $rogue->armor_ac_bonus = 0;
         $rogue->weapon_name = 'None';
-        $rogue->weapon_max_dmg = 0;
+        $rogue->weapon_max_dmg = 5;
         $rogue->ranged_weapon = false;
         $rogue->friendly = false;
+        $rogue->sharing = hash('sha256', $rogue->id . $rogue->name);
         $rogue->save();
 
         $bard = new Character;
@@ -88,16 +91,17 @@ class CharactersTableSeeder extends Seeder
         $bard->int = 15;
         $bard->wis = 15;
         $bard->cha = 13;
-        $bard->status = 'Inactive';
+        $bard->status = 'Active';
         $bard->max_hp = 6 + 1;
         $bard->current_hp = $bard->max_hp;
         $bard->gold = 160;
         $bard->armor_name = 'None';
         $bard->armor_ac_bonus = 0;
         $bard->weapon_name = 'None';
-        $bard->weapon_max_dmg = 0;
+        $bard->weapon_max_dmg = 2;
         $bard->ranged_weapon = false;
         $bard->friendly = true;
+        $bard->sharing = hash('sha256', $bard->id . $bard->name);
         $bard->save();
 
         $cleric = new Character;
@@ -111,16 +115,17 @@ class CharactersTableSeeder extends Seeder
         $cleric->int = 18;
         $cleric->wis = 14;
         $cleric->cha = 14;
-        $cleric->status = 'Inactive';
+        $cleric->status = 'Active';
         $cleric->max_hp = 8 + 4;
         $cleric->current_hp = $cleric->max_hp;
         $cleric->gold = 160;
         $cleric->armor_name = 'None';
         $cleric->armor_ac_bonus = 0;
         $cleric->weapon_name = 'None';
-        $cleric->weapon_max_dmg = 0;
+        $cleric->weapon_max_dmg = 1;
         $cleric->ranged_weapon = false;
         $cleric->friendly = true;
+        $cleric->sharing = hash('sha256', $cleric->id . $cleric->name);
         $cleric->save();
 
         $druid = new Character;
@@ -134,16 +139,17 @@ class CharactersTableSeeder extends Seeder
         $druid->int = 16;
         $druid->wis = 12;
         $druid->cha = 8;
-        $druid->status = 'Inactive';
+        $druid->status = 'Active';
         $druid->max_hp = 8 + 2;
         $druid->current_hp = $druid->max_hp;
         $druid->gold = 160;
         $druid->armor_name = 'None';
         $druid->armor_ac_bonus = 0;
         $druid->weapon_name = 'None';
-        $druid->weapon_max_dmg = 0;
+        $druid->weapon_max_dmg = 4;
         $druid->ranged_weapon = false;
         $druid->friendly = false;
+        $druid->sharing = hash('sha256', $druid->id . $druid->name);
         $druid->save();
 
         $monk = new Character;
@@ -164,9 +170,10 @@ class CharactersTableSeeder extends Seeder
         $monk->armor_name = 'None';
         $monk->armor_ac_bonus = 0;
         $monk->weapon_name = 'None';
-        $monk->weapon_max_dmg = 0;
+        $monk->weapon_max_dmg = 2;
         $monk->ranged_weapon = false;
         $monk->friendly = false;
+        $monk->sharing = hash('sha256', $monk->id . $monk->name);
         $monk->save();
 
         $ranger = new Character;
@@ -187,9 +194,10 @@ class CharactersTableSeeder extends Seeder
         $ranger->armor_name = 'None';
         $ranger->armor_ac_bonus = 0;
         $ranger->weapon_name = 'None';
-        $ranger->weapon_max_dmg = 0;
+        $ranger->weapon_max_dmg = 2;
         $ranger->ranged_weapon = true;
         $ranger->friendly = true;
+        $ranger->sharing = hash('sha256', $ranger->id . $ranger->name);
         $ranger->save();
 
         $fighter = new Character;
@@ -203,16 +211,17 @@ class CharactersTableSeeder extends Seeder
         $fighter->int = 13;
         $fighter->wis = 13;
         $fighter->cha = 13;
-        $fighter->status = 'Inactive';
+        $fighter->status = 'Active';
         $fighter->max_hp = 10 + 2;
         $fighter->current_hp = $fighter->max_hp;
         $fighter->gold = 160;
         $fighter->armor_name = 'None';
         $fighter->armor_ac_bonus = 0;
         $fighter->weapon_name = 'None';
-        $fighter->weapon_max_dmg = 0;
+        $fighter->weapon_max_dmg = 1;
         $fighter->ranged_weapon = false;
         $fighter->friendly = false;
+        $fighter->sharing = hash('sha256', $fighter->id . $fighter->name);
         $fighter->save();
 
         $paladin = new Character;
@@ -226,16 +235,17 @@ class CharactersTableSeeder extends Seeder
         $paladin->int = 10;
         $paladin->wis = 13;
         $paladin->cha = 9;
-        $paladin->status = 'Inactive';
+        $paladin->status = 'Active';
         $paladin->max_hp = 10 + 2;
         $paladin->current_hp = $paladin->max_hp;
         $paladin->gold = 160;
         $paladin->armor_name = 'None';
         $paladin->armor_ac_bonus = 0;
         $paladin->weapon_name = 'None';
-        $paladin->weapon_max_dmg = 0;
+        $paladin->weapon_max_dmg = 7;
         $paladin->ranged_weapon = false;
         $paladin->friendly = true;
+        $paladin->sharing = hash('sha256', $paladin->id . $paladin->name);
         $paladin->save();
 
         $barbarian = new Character;
@@ -249,16 +259,17 @@ class CharactersTableSeeder extends Seeder
         $barbarian->int = 13;
         $barbarian->wis = 12;
         $barbarian->cha = 9;
-        $barbarian->status = 'Inactive';
+        $barbarian->status = 'Active';
         $barbarian->max_hp = 12 + 3;
         $barbarian->current_hp = $barbarian->max_hp;
         $barbarian->gold = 160;
         $barbarian->armor_name = 'Sample Armor';
         $barbarian->armor_ac_bonus = 0;
         $barbarian->weapon_name = 'Sample Weapon';
-        $barbarian->weapon_max_dmg = 0;
+        $barbarian->weapon_max_dmg = 3;
         $barbarian->ranged_weapon = true;
         $barbarian->friendly = false;
+        $barbarian->sharing = hash('sha256', $barbarian->id . $barbarian->name);
         $barbarian->save();
 
     }

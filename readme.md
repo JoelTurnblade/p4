@@ -54,3 +54,6 @@ https://laravel.com/docs/5.6/validation#quick-displaying-the-validation-errors
 
 Minimum Screen Width
 https://stackoverflow.com/questions/3802455/min-width-in-window-resizing
+
+Detect Empty query
+https://stackoverflow.com/questions/20563166/eloquent-collection-counting-and-detect-empty

@@ -106,6 +106,7 @@ class CharacterController extends Controller
                 $character->weapon_name = $request->input('weapon');
                 $character->weapon_max_dmg = $request->input('max-weapon-dmg');
                 $character->ranged_weapon = (boolean)$request->input('ranged-or-melee');
+                $character->sharing = hash('sha256', $character->id . $character->name);
 
                 if($request->path() == 'characters') {
                     $character->friendly = true;
