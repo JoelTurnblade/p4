@@ -48,3 +48,6 @@ Source: https://stackoverflow.com/questions/42695917/laravel-5-4-disable-registe
 
 Laravel Request Path
 https://laravel.com/api/4.2/Illuminate/Http/Request.html
+
+Validation
+https://laravel.com/docs/5.6/validation#quick-displaying-the-validation-errors

@@ -79,36 +79,91 @@
             <form method='POST' action='/enemies' id='form'>
                 {{ csrf_field() }}
                 <tr>
-                    <th><textarea id='name' name='name' rows='2' class='table-text-area'></textarea>
-                    <th><textarea id='race' name='race' rows='2' class='table-text-area'></textarea>
-                    <th><textarea id='class' name='class' rows='2' class='table-text-area'></textarea></th>
+                    <th>
+                        <textarea id='name' name='name' rows='2' class='table-text-area'>{{ old('name') }}
+                        </textarea>
+                    </th>
+                    <th>
+                        <textarea id='race' name='race' rows='2' class='table-text-area'>{{ old('race') }}
+                        </textarea>
+                    </th>
+                    <th>
+                        <textarea id='class' name='class' rows='2' class='table-text-area'>{{ old('class') }}
+                        </textarea>
+                    </th>
                     <th>
                         <select id='status' name='status' size='3'>
-                            <option value='Active'>Active</option>
-                            <option value='Inactive'>Inactive</option>
-                            <option value='Dead'>Dead</option>
+                            <option value='Active'
+                            @if((old('status') == 'Active')){{ 'selected' }}@endif>Active</option>
+                            <option value='Inactive'
+                            @if((old('status') == 'Inactive')){{ 'selected' }}@endif>Inactive</option>
+                            <option value='Dead'
+                            @if((old('status') == 'Dead')){{ 'selected' }}@endif>Dead</option>
                         </select>
                     </th>
-                    <th><input id='level' name='level' type='number' class='table-text-box'></th>
-                    <th><input id='str' name='str' type='number' class='table-text-box'></th>
-                    <th><input id='dex' name='dex' type='number' class='table-text-box'></th>
-                    <th><input id='con' name='con' type='number' class='table-text-box'></th>
-                    <th><input id='int' name='int' type='number' class='table-text-box'></th>
-                    <th><input id='wis' name='wis' type='number' class='table-text-box'></th>
-                    <th><input id='cha' name='cha' type='number' class='table-text-box'></th>
-                    <th><input id='max-hp' name='max-hp' type='number' class='table-text-box'></th>
-                    <th><input id='current-hp' name='current-hp' type='number' class='table-text-box'></th>
-                    <th><input id='gold' name='gold' type='number' class='table-text-box'></th>
-                    <th><textarea id='armor' name='armor' rows='2' class='table-text-area'></textarea>
-                    <th><input id='armor-ac-bonus' name='armor-ac-bonus' type='number' class='table-text-box'></th>
-                    <th><textarea id='weapon' name='weapon' cols='2' class='table-text-area'></textarea>
+                    <th>
+                        <input id='level' name='level' type='text' class='table-text-box'
+                               value='{{ old('level') }}'>
+                    </th>
+                    <th>
+                        <input id='str' name='str' type='text' class='table-text-box'
+                               value='{{ old('str') }}'>
+                    </th>
+                    <th>
+                        <input id='dex' name='dex' type='text' class='table-text-box'
+                               value='{{ old('dex') }}'>
+                    </th>
+                    <th>
+                        <input id='con' name='con' type='text' class='table-text-box'
+                               value='{{ old('con') }}'>
+                    </th>
+                    <th>
+                        <input id='int' name='int' type='text' class='table-text-box'
+                               value='{{ old('int') }}'>
+                    </th>
+                    <th>
+                        <input id='wis' name='wis' type='text' class='table-text-box'
+                               value='{{ old('wis') }}'>
+                    </th>
+                    <th>
+                        <input id='cha' name='cha' type='text' class='table-text-box'
+                               value='{{ old('cha') }}'>
+                    </th>
+                    <th>
+                        <input id='max-hp' name='max-hp' type='text' class='table-text-box'
+                               value='{{ old('max-hp') }}'>
+                    </th>
+                    <th>
+                        <input id='current-hp' name='current-hp' type='text' class='table-text-box'
+                               value='{{ old('current-hp') }}'>
+                    </th>
+                    <th>
+                        <input id='gold' name='gold' type='text' class='table-text-box'
+                               value='{{ old('gold') }}'>
+                    </th>
+                    <th>
+                        <textarea id='armor' name='armor' rows='2' class='table-text-area'>{{ old('armor') }}
+                        </textarea>
+                    <th>
+                        <input id='armor-ac-bonus' name='armor-ac-bonus' type='text' class='table-text-box'
+                               value='{{ old('armor-ac-bonus') }}'>
+                    </th>
+                    <th>
+                        <textarea id='weapon' name='weapon' cols='2' class='table-text-area'>{{ old('weapon')}}
+                        </textarea>
+                    </th>
                     <th>
                         <select id='ranged-or-melee' name='ranged-or-melee' size='2'>
-                            <option value='TRUE'>Ranged</option>
-                            <option value='FALSE'>Melee</option>
+                            <option value='TRUE'
+                            @if((old('ranged-or-melee') == 'TRUE')){{ 'selected' }}@endif>Ranged</option>
+                            <option value='FALSE'
+                            @if((old('ranged-or-melee') == 'FALSE')){{ 'selected' }}@endif>Melee</option>
                         </select>
                     </th>
-                    <th><input id='max-weapon-dmg' name='max-weapon-dmg' type='number' class='table-text-box'></th>
+                    <th>
+                        <input id='max-weapon-dmg' name='max-weapon-dmg' type='text' class='table-text-box'
+                               value='{{ old('max-weapon-dmg') }}'>
+                    </th>
                 </tr>
                 <tr>
                     <th colspan='19' class='table-blank-row-submit'>
@@ -130,5 +185,10 @@
                 </tr>
             </form>
         </table>
+        @if($errors->any())
+            @foreach ($errors->all() as $errorMessage)
+                <li class='error'>{{ $errorMessage }}</li>
+            @endforeach
+        @endif
     </div>
 @endsection

@@ -12,11 +12,35 @@ class CharacterController extends Controller
 {
     public function update(Request $request) {
 
+
         $user = Auth::user();
 
         if($user) {
 
-            if($request->input('opp') == 'save' && $request->input('name') != '') {
+            $request->validate([
+                'name' => 'required',
+                'race' => 'required',
+                'class' => 'required',
+                'level' => 'required',
+                'str' => 'required',
+                'dex' => 'required',
+                'con' => 'required',
+                'int' => 'required',
+                'wis' => 'required',
+                'cha' => 'required',
+                'status' => 'required',
+                'max-hp' => 'required',
+                'current-hp' => 'required',
+                'gold' => 'required',
+                'armor' => 'required',
+                'armor-ac-bonus' => 'required',
+                'weapon' => 'required',
+                'max-weapon-dmg' => 'required',
+                'ranged-or-melee' => 'required',
+            ]);
+
+
+            if($request->input('opp') == 'save') {
 
                 $character = Character::whereHas('users', function($query) {
                     $query->where('name', '=', Auth::user()->name);
@@ -47,7 +71,7 @@ class CharacterController extends Controller
             }
 
 
-            if($request->input('opp') == 'delete' && $request->input('name') != '') {
+            if($request->input('opp') == 'delete') {
 
                 $character = Character::whereHas('users', function($query) {
                     $query->where('name', '=', Auth::user()->name);
@@ -59,7 +83,7 @@ class CharacterController extends Controller
             }
 
 
-            if($request->input('opp') == 'create' && $request->input('name') != '') {
+            if($request->input('opp') == 'create') {
 
                 $character = new Character;
 
@@ -100,7 +124,7 @@ class CharacterController extends Controller
             }
 
 
-            if($request->input('opp') == 'transfer' && $request->input('name') != '') {
+            if($request->input('opp') == 'transfer') {
 
                 $character = Character::whereHas('users', function($query) {
                     $query->where('name', '=', Auth::user()->name);
