@@ -155,9 +155,8 @@ class CharacterController extends Controller
                 'userName' => $user->name,
                 'characters' => $characters,
             ]);
-        }
 
-        else {
+        } else {
             return view('errors.404');
         }
 

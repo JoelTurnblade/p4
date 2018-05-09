@@ -51,3 +51,6 @@ https://laravel.com/api/4.2/Illuminate/Http/Request.html
 
 Validation
 https://laravel.com/docs/5.6/validation#quick-displaying-the-validation-errors
+
+Minimum Screen Width
+https://stackoverflow.com/questions/3802455/min-width-in-window-resizing

@@ -7,6 +7,8 @@ body {
     background-color: darkblue;
     height: 50px;
     padding: 10px;
+    min-width: 800px;
+    width: auto;
 }
 
 .button {
@@ -29,10 +31,11 @@ body {
 
 .navigation-bar {
     position: absolute;
-    left: 20%;
+    left: 30%;
     top: 0;
     height: 60px;
-    width: 60%;
+    width: 40%;
+    min-width: 300px;
 }
 
 .navigation {
@@ -198,7 +201,36 @@ select option:checked {
     float: left;
 }
 
+.combat-table {
+    display: inline-block;
+    width: 300px;
+    border: none;
+}
 
+.combat-table-heading {
+    background-color: dodgerblue;
+    color: white;
+    font-size: 14px;
+}
+
+.combat-form {
+    display: inline-block;
+    margin: auto;
+    vertical-align: top;
+    padding-top: 20px;
+}
+
+.combat-container {
+    padding: 20px;
+    min-width: 1000px;
+    text-align: center;
+    min-height: 200px;
+}
+
+.test {
+    text-align: center;
+    width: 20%;
+}
 
 
 

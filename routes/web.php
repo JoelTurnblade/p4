@@ -6,8 +6,8 @@ Route::get('/', function () {
     $user = Auth::user();
     if($user) {
         $userName = $user->name;
-    }
-    else {
+
+    } else {
         $userName = null;
     }
 
@@ -35,9 +35,8 @@ Route::get('/characters', function () {
             'userName' => $user->name,
             'characters' => $characters,
         ]);
-    }
 
-    else {
+    } else {
         return view('errors.404');
     }
 
@@ -61,9 +60,8 @@ Route::get('/enemies', function () {
             'userName' => $user->name,
             'characters' => $characters,
         ]);
-    }
 
-    else {
+    } else {
         return view('errors.404');
     }
 });
@@ -75,18 +73,40 @@ Route::post('/enemies', 'CharacterController@update');
 Route::get('/combat', function() {
 
     $user = Auth::user();
+
+
     if($user) {
         $userName = $user->name;
-    }
-    else {
-        $userName = null;
-    }
 
-    return view('pages.combat')->with([
-        'user' => $user,
-        'userName' => $userName,
-    ]);
+        $characters = Character::whereHas('users', function($query) {
+            $query->where('name', '=', Auth::user()->name);
+        })->where([
+            ['friendly', '=', true],
+            ['status', '=', 'Active'],
+        ])->get();
+
+        $enemies = Character::whereHas('users', function($query) {
+            $query->where('name', '=', Auth::user()->name);
+        })->where([
+            ['friendly', '=', false],
+            ['status', '=', 'Active'],
+        ])->get();
+
+        return view('pages.combat')->with([
+            'user' => $user,
+            'userName' => $userName,
+            'characters' => $characters,
+            'enemies' => $enemies,
+            'message' => ''
+        ]);
+
+    } else {
+        return view('errors.404');
+    }
 });
+
+
+Route::post('/combat', 'CombatController@attack');
 
 
 Route::match('get', 'login', function(){
