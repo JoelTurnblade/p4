@@ -42,3 +42,9 @@ http://dnd3rd.sourceforge.net/ for random characters
 
 Odd Button Behavior
 https://stackoverflow.com/questions/2825856/html-button-to-not-submit-form
+
+Overrides the 'get' login route from Auth:routes()
+Source: https://stackoverflow.com/questions/42695917/laravel-5-4-disable-register-route
+
+Laravel Request Path
+https://laravel.com/api/4.2/Illuminate/Http/Request.html

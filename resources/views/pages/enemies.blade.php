@@ -76,7 +76,7 @@
                 <th>Ranged or<br>Melee</th>
                 <th>Maximum Weapon<br>Damage</th>
             </tr>
-            <form method='POST' action='/characters' id='form'>
+            <form method='POST' action='/enemies' id='form'>
                 {{ csrf_field() }}
                 <tr>
                     <th><textarea id='name' name='name' rows='2' class='table-text-area'></textarea>
@@ -123,7 +123,7 @@
                                 Create
                             </button>
                             <button type='button' class='navigation border-white' onclick='transferData()'>
-                                Transfer to Enemies
+                                Transfer to Characters
                             </button>
                         </div>
                     </th>

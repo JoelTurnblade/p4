@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class CharacterController extends Controller
 {
     public function update(Request $request) {
+
         $user = Auth::user();
 
         if($user) {
@@ -82,6 +83,12 @@ class CharacterController extends Controller
                 $character->weapon_max_dmg = $request->input('max-weapon-dmg');
                 $character->ranged_weapon = (boolean)$request->input('ranged-or-melee');
 
+                if($request->path() == 'characters') {
+                    $character->friendly = true;
+                } else {
+                    $character->friendly = false;
+                }
+
                 $character->save();
 
                 $user->characters()->save($character);
@@ -93,10 +100,33 @@ class CharacterController extends Controller
             }
 
 
-            $characters = Character::whereHas('users', function($query) {
-                $query->where('name', '=', Auth::user()->name);
-            })->get();
-            return view('pages.characters')->with([
+            if($request->input('opp') == 'transfer' && $request->input('name') != '') {
+
+                $character = Character::whereHas('users', function($query) {
+                    $query->where('name', '=', Auth::user()->name);
+                })->where('id', '=', $request->input('id'))->first();
+
+                if($character->friendly) {
+                    $character->friendly = false;
+                } else {
+                    $character->friendly = true;
+                }
+
+                $character->save();
+            }
+
+
+            if($request->path() == 'characters') {
+                $characters = Character::whereHas('users', function($query) {
+                    $query->where('name', '=', Auth::user()->name);
+                })->where('friendly', '=', true)->get();
+            } else {
+                $characters = Character::whereHas('users', function($query) {
+                    $query->where('name', '=', Auth::user()->name);
+                })->where('friendly', '=', false)->get();
+            }
+            
+            return view('pages.' . $request->path())->with([
                 'user' => $user,
                 'userName' => $user->name,
                 'characters' => $characters,

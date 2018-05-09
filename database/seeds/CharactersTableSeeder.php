@@ -28,6 +28,7 @@ class CharactersTableSeeder extends Seeder
         $wizard->weapon_name = 'None';
         $wizard->weapon_max_dmg = 0;
         $wizard->ranged_weapon = false;
+        $wizard->friendly = true;
         $wizard->save();
 
         $sorcerer = new Character;
@@ -50,6 +51,7 @@ class CharactersTableSeeder extends Seeder
         $sorcerer->weapon_name = 'None';
         $sorcerer->weapon_max_dmg = 0;
         $sorcerer->ranged_weapon = false;
+        $sorcerer->friendly = false;
         $sorcerer->save();
 
         $rogue = new Character;
@@ -72,6 +74,7 @@ class CharactersTableSeeder extends Seeder
         $rogue->weapon_name = 'None';
         $rogue->weapon_max_dmg = 0;
         $rogue->ranged_weapon = false;
+        $rogue->friendly = false;
         $rogue->save();
 
         $bard = new Character;
@@ -94,6 +97,7 @@ class CharactersTableSeeder extends Seeder
         $bard->weapon_name = 'None';
         $bard->weapon_max_dmg = 0;
         $bard->ranged_weapon = false;
+        $bard->friendly = true;
         $bard->save();
 
         $cleric = new Character;
@@ -116,6 +120,7 @@ class CharactersTableSeeder extends Seeder
         $cleric->weapon_name = 'None';
         $cleric->weapon_max_dmg = 0;
         $cleric->ranged_weapon = false;
+        $cleric->friendly = true;
         $cleric->save();
 
         $druid = new Character;
@@ -138,6 +143,7 @@ class CharactersTableSeeder extends Seeder
         $druid->weapon_name = 'None';
         $druid->weapon_max_dmg = 0;
         $druid->ranged_weapon = false;
+        $druid->friendly = false;
         $druid->save();
 
         $monk = new Character;
@@ -160,6 +166,7 @@ class CharactersTableSeeder extends Seeder
         $monk->weapon_name = 'None';
         $monk->weapon_max_dmg = 0;
         $monk->ranged_weapon = false;
+        $monk->friendly = false;
         $monk->save();
 
         $ranger = new Character;
@@ -182,6 +189,7 @@ class CharactersTableSeeder extends Seeder
         $ranger->weapon_name = 'None';
         $ranger->weapon_max_dmg = 0;
         $ranger->ranged_weapon = true;
+        $ranger->friendly = true;
         $ranger->save();
 
         $fighter = new Character;
@@ -204,6 +212,7 @@ class CharactersTableSeeder extends Seeder
         $fighter->weapon_name = 'None';
         $fighter->weapon_max_dmg = 0;
         $fighter->ranged_weapon = false;
+        $fighter->friendly = false;
         $fighter->save();
 
         $paladin = new Character;
@@ -226,6 +235,7 @@ class CharactersTableSeeder extends Seeder
         $paladin->weapon_name = 'None';
         $paladin->weapon_max_dmg = 0;
         $paladin->ranged_weapon = false;
+        $paladin->friendly = true;
         $paladin->save();
 
         $barbarian = new Character;
@@ -248,6 +258,7 @@ class CharactersTableSeeder extends Seeder
         $barbarian->weapon_name = 'Sample Weapon';
         $barbarian->weapon_max_dmg = 0;
         $barbarian->ranged_weapon = true;
+        $barbarian->friendly = false;
         $barbarian->save();
 
     }

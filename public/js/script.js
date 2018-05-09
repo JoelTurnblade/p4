@@ -42,3 +42,8 @@ function createData() {
     document.getElementById('form').submit();
 }
 
+function transferData() {
+    document.getElementById('opp').value = 'transfer';
+    document.getElementById('form').submit();
+}
+

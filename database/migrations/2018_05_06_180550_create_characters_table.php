@@ -35,7 +35,7 @@ class CreateCharactersTable extends Migration
             $table->integer('weapon_max_dmg');
             $table->boolean('ranged_weapon');
 
-            
+            $table->boolean('friendly');
 
         });
     }
