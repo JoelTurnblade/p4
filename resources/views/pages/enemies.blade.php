@@ -80,16 +80,16 @@
                 {{ csrf_field() }}
                 <tr>
                     <th>
-                        <textarea id='name' name='name' rows='2' class='table-text-area'>{{ old('name') }}
-                        </textarea>
+                        <textarea id='name' name='name' rows='2'
+                            class='table-text-area'>{{ old('name') }}</textarea>
                     </th>
                     <th>
-                        <textarea id='race' name='race' rows='2' class='table-text-area'>{{ old('race') }}
-                        </textarea>
+                        <textarea id='race' name='race' rows='2'
+                            class='table-text-area'>{{ old('race') }}</textarea>
                     </th>
                     <th>
-                        <textarea id='class' name='class' rows='2' class='table-text-area'>{{ old('class') }}
-                        </textarea>
+                        <textarea id='class' name='class' rows='2'
+                            class='table-text-area'>{{ old('class') }}</textarea>
                     </th>
                     <th>
                         <select id='status' name='status' size='3'>
@@ -142,15 +142,15 @@
                                value='{{ old('gold') }}'>
                     </th>
                     <th>
-                        <textarea id='armor' name='armor' rows='2' class='table-text-area'>{{ old('armor') }}
-                        </textarea>
+                        <textarea id='armor' name='armor' rows='2'
+                            class='table-text-area'>{{ old('armor') }}</textarea>
                     <th>
                         <input id='armor-ac-bonus' name='armor-ac-bonus' type='text' class='table-text-box'
                                value='{{ old('armor-ac-bonus') }}'>
                     </th>
                     <th>
-                        <textarea id='weapon' name='weapon' cols='2' class='table-text-area'>{{ old('weapon')}}
-                        </textarea>
+                        <textarea id='weapon' name='weapon' cols='2'
+                            class='table-text-area'>{{ old('weapon')}}</textarea>
                     </th>
                     <th>
                         <select id='ranged-or-melee' name='ranged-or-melee' size='2'>
@@ -168,7 +168,7 @@
                 <tr>
                     <th colspan='19' class='table-blank-row-submit'>
                         <div class='navigation-container'>
-                            <input type='hidden' id='id' name='id'>
+                            <input type='hidden' id='id' name='id' value='{{ old('id') }}'>
                             <input type='hidden' id='opp' name='opp' value='save'>
                             <input type='submit' class='navigation border-white' value='Save'>
                             <button type='button' class='navigation border-white' onclick='deleteData()'>
