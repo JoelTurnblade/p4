@@ -21,7 +21,7 @@ class CharacterController extends Controller
                 'name' => 'required',
                 'race' => 'required',
                 'class' => 'required',
-                'level' => 'required',
+                'level' => 'required|integer',
                 'str' => 'required|integer',
                 'dex' => 'required|integer',
                 'con' => 'required|integer',
