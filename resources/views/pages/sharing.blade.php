@@ -47,13 +47,13 @@
                         <br>
                         <div class='sharing-padding'>
                             <input type='submit' value='Link'>
+                            <div class='font-small'>
+                                {!! $message !!}
+                            </div>
                         </div>
                     </form>
                 </th>
             </tr>
         </table>
-    </div>
-    <div>
-        {{ $message }}
     </div>
 @endsection

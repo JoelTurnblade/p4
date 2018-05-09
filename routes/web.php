@@ -122,7 +122,7 @@ Route::get('/sharing', function () {
             'user' => $user,
             'userName' => $user->name,
             'characters' => $characters,
-            'message' => '',
+            'message' => '<br><br>',
         ]);
 
     } else {

@@ -241,6 +241,10 @@ select option:checked {
     padding-top: 5px;
 }
 
+.font-small {
+    font-size: 12px;
+}
+
 
 
 
