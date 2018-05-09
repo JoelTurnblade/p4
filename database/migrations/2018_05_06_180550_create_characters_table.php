@@ -25,6 +25,7 @@ class CreateCharactersTable extends Migration
             $table->integer('wis');
             $table->integer('cha');
 
+            $table->string('status');
             $table->integer('max_hp');
             $table->integer('current_hp');
             $table->integer('gold');
@@ -33,6 +34,8 @@ class CreateCharactersTable extends Migration
             $table->string('weapon_name');
             $table->integer('weapon_max_dmg');
             $table->boolean('ranged_weapon');
+
+            
 
         });
     }

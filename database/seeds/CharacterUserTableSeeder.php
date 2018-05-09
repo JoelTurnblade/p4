@@ -9,7 +9,7 @@ class CharacterUserTableSeeder extends Seeder
     public function run()
     {
         $characters = Character::all();
-        $admin = User::where('name', '=', 'admin')->first();
+        $admin = User::where('name', '=', 'Admin')->first();
         foreach ($characters as $character) {
             $admin->characters()->save($character);
         }

@@ -23,25 +23,25 @@ Route::get('/characters', function () {
 
     $user = Auth::user();
     if($user) {
-        $userName = $user->name;
+
+        $characters = Character::whereHas('users', function($query) {
+            $query->where('name', '=', Auth::user()->name);
+        })->get();
+
+        return view('pages.characters')->with([
+            'user' => $user,
+            'userName' => $user->name,
+            'characters' => $characters,
+        ]);
     }
+
     else {
-        $userName = null;
+        return view('errors.404');
     }
 
-    return view('pages.characters')->with([
-        'user' => $user,
-        'userName' => $userName,
-    ]);
+});
 
-    // @fixme: search characters
-    //$characters = Character::whereHas('users', function($query) {
-    //    $query->where('name', '=', Auth::user()->name);
-    //})->get();
-    //dump($characters);
-
-
-})->middleware('auth');
+Route::post('/characters', 'CharacterController@update');
 
 // Overrides the 'get' login route from Auth:routes()
 // Source: https://stackoverflow.com/questions/42695917/laravel-5-4-disable-register-route

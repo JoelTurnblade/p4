@@ -5,8 +5,6 @@ use App\Character;
 
 class CharactersTableSeeder extends Seeder
 {
-    // http://dnd3rd.sourceforge.net/ for random characters
-    // @fixme include the random characters website in the readme
 
     public function run()
     {
@@ -21,6 +19,7 @@ class CharactersTableSeeder extends Seeder
         $wizard->int = 16;
         $wizard->wis = 12;
         $wizard->cha = 11;
+        $wizard->status = 'Inactive';
         $wizard->max_hp = 4 + 0;
         $wizard->current_hp = $wizard->max_hp;
         $wizard->gold = 160;
@@ -42,6 +41,7 @@ class CharactersTableSeeder extends Seeder
         $sorcerer->int = 17;
         $sorcerer->wis = 13;
         $sorcerer->cha = 13;
+        $sorcerer->status = 'Dead';
         $sorcerer->max_hp = 4 - 1;
         $sorcerer->current_hp = $sorcerer->max_hp;
         $sorcerer->gold = 160;
@@ -63,6 +63,7 @@ class CharactersTableSeeder extends Seeder
         $rogue->int = 9;
         $rogue->wis = 12;
         $rogue->cha = 17;
+        $rogue->status = 'Active';
         $rogue->max_hp = 6 + 1;
         $rogue->current_hp = $rogue->max_hp;
         $rogue->gold = 160;
@@ -84,6 +85,7 @@ class CharactersTableSeeder extends Seeder
         $bard->int = 15;
         $bard->wis = 15;
         $bard->cha = 13;
+        $bard->status = 'Inactive';
         $bard->max_hp = 6 + 1;
         $bard->current_hp = $bard->max_hp;
         $bard->gold = 160;
@@ -105,6 +107,7 @@ class CharactersTableSeeder extends Seeder
         $cleric->int = 18;
         $cleric->wis = 14;
         $cleric->cha = 14;
+        $cleric->status = 'Inactive';
         $cleric->max_hp = 8 + 4;
         $cleric->current_hp = $cleric->max_hp;
         $cleric->gold = 160;
@@ -126,6 +129,7 @@ class CharactersTableSeeder extends Seeder
         $druid->int = 16;
         $druid->wis = 12;
         $druid->cha = 8;
+        $druid->status = 'Inactive';
         $druid->max_hp = 8 + 2;
         $druid->current_hp = $druid->max_hp;
         $druid->gold = 160;
@@ -147,6 +151,7 @@ class CharactersTableSeeder extends Seeder
         $monk->int = 8;
         $monk->wis = 16;
         $monk->cha = 12;
+        $monk->status = 'Inactive';
         $monk->max_hp = 8 + 0;
         $monk->current_hp = $monk->max_hp;
         $monk->gold = 160;
@@ -168,6 +173,7 @@ class CharactersTableSeeder extends Seeder
         $ranger->int = 11;
         $ranger->wis = 14;
         $ranger->cha = 10;
+        $ranger->status = 'Inactive';
         $ranger->max_hp = 8 + 1;
         $ranger->current_hp = $ranger->max_hp;
         $ranger->gold = 160;
@@ -175,7 +181,7 @@ class CharactersTableSeeder extends Seeder
         $ranger->armor_ac_bonus = 0;
         $ranger->weapon_name = 'None';
         $ranger->weapon_max_dmg = 0;
-        $ranger->ranged_weapon = false;
+        $ranger->ranged_weapon = true;
         $ranger->save();
 
         $fighter = new Character;
@@ -189,6 +195,7 @@ class CharactersTableSeeder extends Seeder
         $fighter->int = 13;
         $fighter->wis = 13;
         $fighter->cha = 13;
+        $fighter->status = 'Inactive';
         $fighter->max_hp = 10 + 2;
         $fighter->current_hp = $fighter->max_hp;
         $fighter->gold = 160;
@@ -210,6 +217,7 @@ class CharactersTableSeeder extends Seeder
         $paladin->int = 10;
         $paladin->wis = 13;
         $paladin->cha = 9;
+        $paladin->status = 'Inactive';
         $paladin->max_hp = 10 + 2;
         $paladin->current_hp = $paladin->max_hp;
         $paladin->gold = 160;
@@ -231,14 +239,15 @@ class CharactersTableSeeder extends Seeder
         $barbarian->int = 13;
         $barbarian->wis = 12;
         $barbarian->cha = 9;
+        $barbarian->status = 'Inactive';
         $barbarian->max_hp = 12 + 3;
         $barbarian->current_hp = $barbarian->max_hp;
         $barbarian->gold = 160;
-        $barbarian->armor_name = 'None';
+        $barbarian->armor_name = 'Sample Armor';
         $barbarian->armor_ac_bonus = 0;
-        $barbarian->weapon_name = 'None';
+        $barbarian->weapon_name = 'Sample Weapon';
         $barbarian->weapon_max_dmg = 0;
-        $barbarian->ranged_weapon = false;
+        $barbarian->ranged_weapon = true;
         $barbarian->save();
 
     }
