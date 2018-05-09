@@ -33,7 +33,7 @@ __Create__
 __Read__
 - Login to <http://p4.turnblade.me>.
 - Go to 'Characters' or 'Enemies'
-- The Characters and Enemies associated with the account will be displayed. Characters can be linked to multiple accounts.
+- The Characters and Enemies associated with the account will be displayed. Characters and Enemies can be associated with multiple accounts using the 'Sharing' tab.
   
 __Update__
 - Login to <http://p4.turnblade.me>.

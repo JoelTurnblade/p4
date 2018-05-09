@@ -123,6 +123,7 @@ Route::get('/sharing', function () {
             'userName' => $user->name,
             'characters' => $characters,
             'message' => '<br><br>',
+            'success' => false,
         ]);
 
     } else {

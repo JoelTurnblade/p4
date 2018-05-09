@@ -23,8 +23,10 @@ class SharingController extends Controller
             if($linkCharacter) {
                 $user->characters()->save($linkCharacter);
                 $message = '<br>Character successfully linked to your account';
+                $success = true;
             } else {
                 $message = '<br>The submitted code did not match an external character';
+                $success = false;
             }
 
 
@@ -38,6 +40,7 @@ class SharingController extends Controller
                 'userName' => $user->name,
                 'characters' => $characters,
                 'message' => $message,
+                'success' => $success,
             ]);
 
         } else {

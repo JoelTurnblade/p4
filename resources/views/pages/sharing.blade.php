@@ -47,7 +47,7 @@
                         <br>
                         <div class='sharing-padding'>
                             <input type='submit' value='Link'>
-                            <div class='font-small'>
+                            <div class='font-small @if(!$success) red @endif'>
                                 {!! $message !!}
                             </div>
                         </div>
